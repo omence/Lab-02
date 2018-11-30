@@ -56,10 +56,8 @@ $(() => Horn.readJson('data/page-1.json'));
 $('select').on('change',selShow);
 function selShow(){
   let selItem=$(this).val();
-  $('div').show();
-  if(selItem!==''){
-    $('div').not('[class*="'+selItem+'"]').hide();
-  }
+  $('div').hide();
+  $('div[id = "'+selItem+'"]').show();
 }
 
 $('#pg2').click(function(){
@@ -77,6 +75,11 @@ $('#pg1').click(function(){
   keyArr = [];
   $(() => Horn.readJson('data/page-1.json'));
 });
+
+// $('#titleBut').click(function(){
+//  Horn.allHorns.sort();
+ 
+// });
 
 // $('#titleBut').click(function(){
 //  Horn.allHorns.sort();
